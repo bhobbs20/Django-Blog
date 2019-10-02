@@ -5,13 +5,13 @@
 			 	{% if user.is_authenticated %}
 					<li><h2>Hi, {{ user.username }}</h2></li>
 					<li class="colorlib-active"><a href="{% url 'index' %}">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li><a href="{% url 'contact' %}">Contact</a></li>
 					<li><a href="javascript:{document.getElementById('logout').submit()}">Logout</a></li>
 				{% else %}
 					<li class="colorlib-active"><a href="{% url 'index' %}">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li><a href="{% url 'contact' %}">Contact</a></li>
                 	<li><a href="{% url 'login' %}">Login</a></li>
 					<li><a href="{% url 'register' %}">Register</a></li>
 				{% endif %}
