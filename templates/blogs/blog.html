@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+    <img src="{{ post.main_photo.url }}" class="img-fluid" >
+    <h1>{{post.title}}</h1>
+    <p> {{post.text}} </p>
+    <h4>{{post.author}} </h4>
+    <h4>{{post.created_date|date}}</h4>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

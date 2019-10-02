@@ -3,11 +3,13 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage,PageNotAnInteger, Paginator
 from .models import Post
 
+
 def index(request):
     posts = Post.objects.order_by('-created_date').filter(is_published=True)
    
     context = {
-        'posts': posts, 
+        'posts': posts,
+       
     }
 
     return render(request, 'blogs/index.html', context)
