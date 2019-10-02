@@ -1,0 +1,12 @@
+<div class="sidebar-box ftco-animate">
+	<h3 class="sidebar-heading">Categories</h3>
+	<ul class="categories">
+		{% if cats %}
+      	{% for cat in cats %}
+			<li><a href="#">{{cat.name}} <span>()</span></a></li>
+		{% endfor %}
+		{% else %}
+			<h1> No Categories</h1>
+		{% endif %}
+	</ul>
+</div>

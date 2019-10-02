@@ -1,0 +1,19 @@
+<div class="sidebar-box ftco-animate">
+    <h3 class="sidebar-heading">Popular Articles</h3>
+    {% if popular_posts %}
+    {% for pop_post in popular_posts %}
+    <div class="block-21 mb-4 d-flex">
+	    <a class="blog-img mr-4" style="background-image: url({{ pop_post.main_photo.url }});"></a>
+	    <div class="text">
+	        <h3 class="heading"><a href="#">{{pop_post.title}}</a></h3>
+	        <div class="meta">
+	            <div><a href="#"><span class="icon-calendar"></span> {{pop_post.date|date}}</a></div>
+	            <div><a href="#"><span class="icon-person"></span> {{pop_post.author}}</a></div>
+	            <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+	        </div>
+        </div>
+	</div>
+    {% endfor %}
+    {% else %}
+	    <h1>No-one likes my stuff</h1>
+    {% endif %}
