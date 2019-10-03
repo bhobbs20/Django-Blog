@@ -1,13 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-# from django.core.mail import send_mail
 from .models import Contact
 
 
-def index(request):
-    return render(request, 'contacts/contact.html')
-
-def contact(request):
+def contact_pigeon(request):
   if request.method == 'POST':
     name = request.POST['name']
     email = request.POST['email']
@@ -18,5 +14,5 @@ def contact(request):
 
     contact.save()
 
-    messages.success(request, 'Your request has been submitted')
+  
     return redirect('index')
