@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'categories.apps.CategoriesConfig',
     'contacts.apps.ContactsConfig',
+    'newsletter.apps.NewsletterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
