@@ -3,13 +3,13 @@
       	{% for post in posts %}
 			<div class="col-md-12">
 				<div class="blog-entry ftco-animate d-md-flex">
-					<a href="single.html" class="img img-2" style="background-image: url( {{ post.main_photo.url }} );"></a>	 
+					<a href="{% url 'blog' post.id %}" class="img img-2" style="background-image: url( {{ post.main_photo.url }} );"></a>	 
 					<div class="text text-2 pl-md-4">
-				        <h3 class="mb-2"><a href="single.html">{{ post.title }}</a></h3>
+				        <h3 class="mb-2"><a href="{% url 'blog' post.id %}">{{ post.title }}</a></h3>
 				        <div class="meta-wrap">
 							<p class="meta">
 				              	<span><i class="icon-calendar mr-2"></i>{{post.created_date|date}}</span>
-				              	<span><a href="single.html"><i class="icon-folder-o mr-2"></i>{{post.category}}</a></span>
+				              	<span><a href="{% url 'blog' post.id %}"><i class="icon-folder-o mr-2"></i>{{post.category}}</a></span>
 				              	<span><i class="icon-comment2 mr-2"></i>(0) Comment</span>
 				            </p>
 			            </div>
