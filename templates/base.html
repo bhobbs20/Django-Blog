@@ -31,7 +31,13 @@
 
     <div id="colorlib-page">
 
-       {% include 'partials/shared/_asidebar.html' %}  
+      {% include 'partials/shared/_asidebar.html' %}  
+      
+      <!-- Alerts -->
+      
+      {% include 'partials/_alert_messages.html' %}
+
+
       {% block content %} {% endblock %}
   
 

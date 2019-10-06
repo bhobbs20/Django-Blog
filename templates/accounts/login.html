@@ -14,8 +14,8 @@
               <p class="text-white text-bold lead">Login to find the coop of your dreams!</p>
             </div>
             <div class="card-body">
-              <!-- Alerts -->
-              {% include 'partials/_alert_messages.html' %}
+          
+
                 <form action="{% url 'login' %}" method="POST">
                   {% csrf_token %}
                 <div class="form-group text-white">

@@ -1,5 +1,6 @@
 
 from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib import messages
 from django.core.paginator import EmptyPage,PageNotAnInteger, Paginator
 from .models import Post, Comment
 from .forms import CommentForm
@@ -46,7 +47,9 @@ def add_comment_to_post(request, pk):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request, 'Your comment was posted, remember be nice!! :)')
             return redirect('blog', post.id)
     else:
         form = CommentForm()
+        messages.error(request, 'Bad comment')
     return render(request, 'blogs/add_comment_to_post.html', {'form': form})
