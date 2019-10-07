@@ -5,6 +5,9 @@
 
 {% block content %}
 	<div id="colorlib-main">
+
+	 {% include 'partials/_alert_messages.html' %}
+
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 	    	<div class="container">
 	    		<div class="row d-flex">
@@ -35,7 +38,7 @@
 		            						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMhQSk9sGA1pMmM7WzEHcGcoOg0swvEtvSRWlYdYIG-2Oagz8jQ" alt="Image placeholder">
 		                  				</div>
 		                  				<div class="comment-body">
-		                   					 <h3>{{comment.author}}</h3>
+		                   					 <h3>{{comment.user_id}}</h3>
 		                    			<div class="meta">{{ comment.created_date }}</div>
 		                    				<p>{{comment.text}}</p>
 		                				</div>

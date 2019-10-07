@@ -7,7 +7,7 @@ class PostsAdmin(admin.ModelAdmin):
     list_editable = ('is_published', 'text', 'main_photo')
    
 class CommentsAdmin(admin.ModelAdmin):
-    list_display = ('text', 'author')
+    list_display = ('text','user_id',)
   
     
 admin.site.register(Post, PostsAdmin)

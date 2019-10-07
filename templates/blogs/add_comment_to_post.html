@@ -8,12 +8,17 @@
     <h1 class="pt-5 mt-3">New comment</h1>
     <form method="POST" class="post-form">
         {% csrf_token %}
+		   {% if user.is_authenticated %}
+              <input type="hidden" name="user_id" value="{{ user.id }}">
+            {% else %}
+              <input type="hidden" name="user_id" value="0">
+            {% endif %}
+    {% comment %} <div class="form-group">
+            <label for="user_id" class="text-left">Name</label>
+            {% render_field form.user_id %} 
+        </div>   {% endcomment %}
         <div class="form-group">
-            <label for="author" class="text-left">Name</label>
-            {% render_field form.author class+="form-control" %}
-        </div>
-        <div class="form-group">
-            <label for="text" class="text-left">Comment</label>
+           
             {% render_field form.text  class+="form-control" %}
         </div>
         <div class="form-group">

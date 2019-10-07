@@ -43,6 +43,7 @@ def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = CommentForm(request.POST)
+        user = CommentForm(request.POST['user_id'])
         if form.is_valid():
             comment = form.save(commit=False)
             comment.post = post
@@ -51,5 +52,5 @@ def add_comment_to_post(request, pk):
             return redirect('blog', post.id)
     else:
         form = CommentForm()
-        messages.error(request, 'Bad comment')
+
     return render(request, 'blogs/add_comment_to_post.html', {'form': form})
