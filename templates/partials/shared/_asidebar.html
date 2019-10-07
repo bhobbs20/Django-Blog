@@ -4,8 +4,14 @@
 				<ul>
 			 	{% if user.is_authenticated %}
 					<li><h2>Hi, {{ user.username }}</h2></li>
-					<li class="colorlib-active"><a href="{% url 'index' %}">Home</a>
+
+
+					<li class="pigeon"><a href="{% url 'index' %}">Home</a>
 					</li>
+
+				
+
+
 					<li {% if 'about' in request.path %}
 							class="colorlib-active"
 						{% else %}
